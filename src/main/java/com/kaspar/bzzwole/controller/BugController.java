@@ -19,7 +19,6 @@ public class BugController {
     private BugRepository bugRepository;
 
     // Get all bugs!
-
     @GetMapping("/bugs")
     public List<Bug> getAllBugs() {
         return bugRepository.findAll();
