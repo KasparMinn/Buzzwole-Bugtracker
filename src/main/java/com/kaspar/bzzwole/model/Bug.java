@@ -8,7 +8,7 @@ public class Bug {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String bugIDnumber;
+    private long bugId;
 
     @Column(name = "bug_type")
     private String bugType;
@@ -46,8 +46,8 @@ public class Bug {
 
     }
 
-    public String getBugIDnumber() { return bugIDnumber; }
-    public void setBugIDnumber(String bugIDnumber) { this.bugIDnumber = bugID; }
+    public long getbugId() { return bugId; }
+    public void setbugId(long bugId) { this.bugId = bugId; }
 
     public String getBugType() { return bugType; }
     public void setBugType(String bugType) { this.bugType = bugType; }
