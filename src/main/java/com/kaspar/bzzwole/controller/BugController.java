@@ -3,10 +3,7 @@ package com.kaspar.bzzwole.controller;
 import com.kaspar.bzzwole.model.Bug;
 import com.kaspar.bzzwole.repository.BugRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,9 @@ public class BugController {
     public List<Bug> getAllBugs() {
         return bugRepository.findAll();
     }
+
+    // Create Bug rest API!
+    @PostMapping("/bugs")
+    public Bug createBug(@RequestBody Bug bug) { return bugRepository.save(bug); }
 
 }
