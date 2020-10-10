@@ -37,7 +37,4 @@ public class User {
         this.userLevel = userLevel;
         this.userAuth = userAuth;
     }
-
-
-
 }
