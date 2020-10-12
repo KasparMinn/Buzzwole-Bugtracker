@@ -28,13 +28,16 @@ public class Bug {
     @Column(name = "est_hours")
     private String bugEstimatedHours;
 
+    @Column(name = "bug_description")
+    private String bugDescription;
+
     // Empty default method for Hibernate:
     public Bug() {
 
     }
 
     // Main constructor:
-    public Bug(String bugType, String bugSubject, String bugStatus, String startDate, String dueDate, String bugEstimatedHours) {
+    public Bug(String bugType, String bugSubject, String bugStatus, String startDate, String dueDate, String bugEstimatedHours, String bugDescription) {
 
         super();
         this.bugType = bugType;
@@ -43,6 +46,7 @@ public class Bug {
         this.startDate = startDate;
         this.dueDate = dueDate;
         this.bugEstimatedHours = bugEstimatedHours;
+        this.bugDescription = bugDescription;
 
     }
 
@@ -66,5 +70,8 @@ public class Bug {
 
     public String getBugEstimatedHours() { return bugEstimatedHours; }
     public void setBugEstimatedHours(String bugEstimatedHours) { this.bugEstimatedHours = bugEstimatedHours; }
+
+    public String getBugDescription() { return bugDescription; }
+    public void setBugDescription(String bugDescription) { this.bugDescription = bugDescription; }
 
 }
