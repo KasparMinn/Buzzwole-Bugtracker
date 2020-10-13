@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -30,7 +32,7 @@ public class BugController {
     // Get BUG by rest API!
     @GetMapping("/bugs/{id}")
     public ResponseEntity<Bug> getBugById(@PathVariable Long id) {
-        Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id + " does not exist!"));
+        Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id.toString() + " does not exist!"));
         return ResponseEntity.ok(bug);
     }
 
@@ -38,7 +40,7 @@ public class BugController {
     @PutMapping("/bugs/{id}")
     public ResponseEntity<Bug> updateBug(@PathVariable Long id, @RequestBody Bug bugDetails) {
 
-        Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id + " does not exist!"));
+        Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id.toString() + " does not exist!"));
 
         bug.setBugType(bugDetails.getBugType());
         bug.setBugSubject(bugDetails.getBugSubject());
