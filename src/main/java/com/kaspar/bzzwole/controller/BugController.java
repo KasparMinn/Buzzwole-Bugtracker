@@ -5,6 +5,7 @@ import com.kaspar.bzzwole.model.Bug;
 import com.kaspar.bzzwole.repository.BugRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class BugController {
 
     // Update BUG by rest API!
     @PutMapping("/bugs/{id}")
-    public ResponseEntity<Bug> updateBug(@PathVariable Long id, @RequestBody Bug bugDetails) {
+    public ResponseEntity<Bug> updateBug(@PathVariable Long id, @RequestBody @NonNull Bug bugDetails) {
 
         Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id.toString() + " does not exist!"));
 
