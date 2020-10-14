@@ -42,7 +42,6 @@ public class BugController {
     public ResponseEntity<Bug> updateBug(@PathVariable Long id, @RequestBody @NonNull Bug bugDetails) {
 
         Bug bug = bugRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Sorry, the bug: " + id.toString() + " does not exist!"));
-
         bug.setBugType(bugDetails.getBugType());
         bug.setBugSubject(bugDetails.getBugSubject());
         bug.setBugStatus(bugDetails.getBugStatus());

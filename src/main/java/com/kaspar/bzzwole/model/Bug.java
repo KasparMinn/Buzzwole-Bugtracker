@@ -32,9 +32,7 @@ public class Bug {
     private String bugDescription;
 
     // Empty default method for Hibernate:
-    public Bug() {
-
-    }
+    public Bug() { }
 
     // Main constructor:
     public Bug(String bugType, String bugSubject, String bugStatus, String startDate, String dueDate, String bugEstimatedHours, String bugDescription) {
